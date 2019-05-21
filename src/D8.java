@@ -1,3 +1,12 @@
+/**
+ * D8.java
+ * 
+ * @author Aurora Borghi
+ * 
+ * Subclass of Dice that emulates 
+ * the behaviors of a D8 die. 
+ * 
+ */
 
 import java.util.Random;
 

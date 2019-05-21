@@ -1,3 +1,12 @@
+/**
+ * D20.java
+ * 
+ * @author Aurora Borghi
+ * 
+ * Subclass of Dice that emulates 
+ * the behaviors of a D20 die. 
+ * 
+ */
 
 import java.util.Random;
 

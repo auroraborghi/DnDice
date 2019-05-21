@@ -1,6 +1,10 @@
 /**
+ * MainUserInterfaceClass.java
  * 
- * @author auroraborghi
+ * @author Aurora Borghi
+ * 
+ * Allows the user to interact with the 
+ * DnD Platform. 
  *
  */
 
@@ -12,7 +16,14 @@ public class MainUserInterface {
 	
 	private String userInput = ""; 
 	
-	// Possible OCP Violation with this method; would need to simply add new dice options
+	/**
+	 * 
+	 * Populates the entire possibleDice 
+	 * ArrayList. 
+	 * 
+	 * Possible OCP Violation with this method
+	 * 
+	 */
 	private void populate() {
 		possibleDice.add(new D4()); 
 		possibleDice.add(new D6());
@@ -20,9 +31,24 @@ public class MainUserInterface {
 		possibleDice.add(new D20()); 
 	}
 	
+	/**
+	 * 
+	 * @param input
+	 * The userInput is inserted into the method
+	 * and used in order to check with all the 
+	 * possible die as well as the string "quit" 
+	 * (lowercase strings checked in order to all both 
+	 * capital and lowercase strings of the same word).
+	 * 
+	 * @return
+	 * If the input is found from the possible die or 
+	 * is equal to the word "quit" then the method 
+	 * returns true, otherwise it will return false. 
+	 * 
+	 */
 	private boolean isValid(String input) {
-		for (Dice d : possibleDice) {
-			if (d.name.equals(input.toLowerCase())) {
+		for (Dice die : possibleDice) {
+			if (die.name.equals(input.toLowerCase())) {
 				return true; 
 			}
 		}
@@ -75,7 +101,7 @@ public class MainUserInterface {
 			}
 		}
 		
-		System.out.println("\n" + "Thanks for playing! Hope you have a wonderful rest of your day!");
+		System.out.println("\n \n \n" + "Thanks for playing! Hope you have a wonderful rest of your day!");
 		
 	}
 

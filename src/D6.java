@@ -1,5 +1,11 @@
 /**
- * @author auroraborghi
+ * D6.java
+ * 
+ * @author Aurora Borghi
+ * 
+ * Subclass of Dice that emulates 
+ * the behaviors of a D6 die. 
+ * 
  */
 
 import java.util.Random;

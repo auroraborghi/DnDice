@@ -1,7 +1,11 @@
 /**
+ * Dice.java
  * 
- * @author auroraborghi
- *
+ * @author Aurora Borghi
+ * 
+ * Abstract class of Dice that 
+ * emulates the behavior of die. 
+ * 
  */
 
 public abstract class Dice {

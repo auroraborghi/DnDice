@@ -1,3 +1,12 @@
+/**
+ * D4.java
+ * 
+ * @author Aurora Borghi
+ * 
+ * Subclass of Dice that emulates 
+ * the behaviors of a D4 die. 
+ * 
+ */
 
 import java.util.Random;
 
