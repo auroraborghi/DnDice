@@ -16,7 +16,7 @@ public class D6 extends Dice{
 		
 		int randomRoll = rand.nextInt(maxRoll) + 1; 
 		
-		System.out.println("You rolled a: " + randomRoll);
+		System.out.println("You rolled a " + randomRoll + " from a " + name);
 	}
 
 }

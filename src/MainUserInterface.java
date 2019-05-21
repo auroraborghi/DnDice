@@ -12,6 +12,7 @@ public class MainUserInterface {
 	
 	private String userInput = ""; 
 	
+	// Possible OCP Violation with this method; would need to simply add new dice options
 	private void populate() {
 		possibleDice.add(new D4()); 
 		possibleDice.add(new D6());
@@ -42,7 +43,15 @@ public class MainUserInterface {
 		
 		// Continue the game until the user decides to stop
 		while (!main.userInput.toLowerCase().equals("quit")) {
-			System.out.print("\n" + "Choose the die you want to roll (D4, D6, D8, D20): ");
+			
+			// Print out all possible Dice in a specific format
+			System.out.print("\n" + "Choose the die you want to roll (");
+			String delimiter = ""; 
+			for (Dice die : main.possibleDice) {
+				System.out.print(delimiter + die.name);
+				delimiter = ", "; 
+			}
+			System.out.print("): ");
 
 			Scanner in = new Scanner(System.in); 
 
@@ -57,31 +66,16 @@ public class MainUserInterface {
 				main.userInput = in.nextLine(); 
 				result = main.isValid(main.userInput); 
 			}
-
-			// Use a switch statement in order to account for the user's input
-			switch(main.userInput.toLowerCase()) {
-			case "d4":
-				D4 d4 = new D4(); 
-				d4.roll(); 
-				break; 
-			case "d6":
-				D6 d6 = new D6(); 
-				d6.roll(); 
-				break; 
-			case "d8":
-				D8 d8 = new D8(); 
-				d8.roll(); 
-				break; 
-			case "d20":
-				D20 d20 = new D20(); 
-				d20.roll(); 
-				break; 
-			default:
-				break; 
+			
+			// Roll the correct dice from the user
+			for (Dice die : main.possibleDice) {
+				if (die.name.contentEquals(main.userInput.toLowerCase())) {
+					die.roll(); 
+				}
 			}
 		}
 		
-		System.out.println("Thanks for playing! Hope you have a wonderful rest of your day!");
+		System.out.println("\n" + "Thanks for playing! Hope you have a wonderful rest of your day!");
 		
 	}
 
